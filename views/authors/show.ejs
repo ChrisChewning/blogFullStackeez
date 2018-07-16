@@ -23,8 +23,18 @@
       <li>Name: <%=author.name%></li>
     </ul>
   </section>
+
+<section>
+  <a href="/authors/<%=author.id%>/edit">Edit</a>
+</section>
+
+
+<section>
+  <form action="/authors/<%=author.id%>?_method=DELETE" method="POST">
+    <button type="submit">DELETE</button>
+      </form>
+</section>
+
 </main>
-
-
   </body>
 </html>

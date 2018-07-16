@@ -32,6 +32,18 @@ router.get('/:id', (req, res) => {
   });
 });
 
+//EDIT Router
+router.get('/:id/edit', (req, res) => {
+  //asking our db to find this author by id
+  Author.findById(req.params.id, (err, foundAuthor) => {
+    //our db responds...
+    res.render('authors/edit.ejs', {
+      //inject the variable author.
+      author: foundAuthor
+    });
+  });
+});
+
 
 
 //POST ROUTE
@@ -46,8 +58,14 @@ router.post('/', (req, res) => {
   });
 });
 
+//DELETE ROUTE (doesn't matter where, but Jim puts it at the bottom)
 
-
+router.delete('/:id', (req, res) => {
+  Author.findbyIdAndRemove(req.params.id, (err, deletedAuthor) => {
+    console.log(deletedAuthor, ' this is deletedAuthor');
+    res.redirect('/authors')
+  })
+});
 
 
 module.exports = router;
