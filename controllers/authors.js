@@ -2,6 +2,11 @@ const express = require('express')
 const router = express.Router();
 const Author = require('../models/authors');
 
+//our model is what talks to the database.
+//res.render responds back to the client.
+
+
+
 
 //FINDS ALL OF THE AUTHORS
 router.get('/', (req, res) => {
