@@ -1,3 +1,3 @@
-const express = require('express')
-const routerArticle = express.routerArticle
-// const +++++ require(../models/articles)
+const express = require('express');
+const router = express.Router;
+const Article =  require('../models/articles');
