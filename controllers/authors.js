@@ -32,7 +32,8 @@ router.get('/:id', (req, res) => {
   });
 });
 
-//EDIT Router
+//EDIT ROUTE
+//#1: The get route allows us to get to the edit.ejs page.
 router.get('/:id/edit', (req, res) => {
   //asking our db to find this author by id
   Author.findById(req.params.id, (err, foundAuthor) => {
@@ -42,6 +43,13 @@ router.get('/:id/edit', (req, res) => {
       author: foundAuthor
     });
   });
+});
+
+//#2: The put route allows us to update the information.
+router.put('/:id/', (req, res) => {
+  Author.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedAuthor) => {
+    res.redirect('/authors');
+    });
 });
 
 
@@ -61,7 +69,7 @@ router.post('/', (req, res) => {
 //DELETE ROUTE (doesn't matter where, but Jim puts it at the bottom)
 
 router.delete('/:id', (req, res) => {
-  Author.findbyIdAndRemove(req.params.id, (err, deletedAuthor) => {
+  Author.findByIdAndDelete(req.params.id, (err, deletedAuthor) => {
     console.log(deletedAuthor, ' this is deletedAuthor');
     res.redirect('/authors')
   })
