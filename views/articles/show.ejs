@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<header>
-			<h1>Articles Here!</h1>
+			<h1><%=articles.name%>'s Articles Here</h1>
 			<nav>
 				<ul>
 					<li>
@@ -20,7 +20,7 @@
 		</header>
 		<main>
 			<section>
-				<-- Put body of article Here ->
+				<%=articles.body%>
 			</section>
 
 			<section>
@@ -29,6 +29,7 @@
 
 			<section>
 			    <form action="/articles/<%=articles.id%>?_method=DELETE" method="POST">
+						
 				<input type="submit" value="Delete Article"/>
 			    </form>
 			</section>

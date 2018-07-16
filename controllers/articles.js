@@ -69,7 +69,7 @@ router.post('/', (req, res) => {
 
 router.delete('/:id', (req, res) => {
   Article.findByIdAndDelete(req.params.id, (err, deletedArticle) => {
-    console.log(deletedAuthor, ' this is deletedArticle');
+    console.log(deletedArticle, ' this is deletedArticle');
     res.redirect('/articles')
   })
 });
