@@ -6,7 +6,7 @@
 	</head>
 	<body>
 		<header>
-			<h1><-- Put title here -></h1>
+			<h1>Articles Here!</h1>
 			<nav>
 				<ul>
 					<li>
@@ -24,8 +24,11 @@
 			</section>
 
 			<section>
-			   <-- Set Up delete form here ->
-			    <form action="" method="">
+			  <a href="/articles/<%=articles.id%>/edit">Edit</a>
+			</section>
+
+			<section>
+			    <form action="/articles/<%=articles.id%>?_method=DELETE" method="POST">
 				<input type="submit" value="Delete Article"/>
 			    </form>
 			</section>

@@ -20,8 +20,13 @@
 		</header>
 		<main>
 			<h2>List of Articles</h2>
-			<ul>
-				<-- Loop over and list out all your articles ->
+
+				<ul>
+					<% for (let i=0; i < articles.length; i++) {%>
+						<li><a href="/articles/<%=articles[i].id%>"><%=articles[i].name %></a></li>
+						<%}%>
+				</ul>
+
 			</ul>
 		</main>
 	</body>
