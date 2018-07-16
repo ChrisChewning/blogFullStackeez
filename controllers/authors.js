@@ -20,6 +20,20 @@ router.get('/new', (req, res) => {
 })
 
 
+//SHOW ROUTE (needs to be after new so you can see it)
+router.get('/:id', (req, res) => {
+  //request argument
+  //look in database Author. method is to find by id.
+  Author.findById(req.params.id, (err, foundAuthor) => {
+    //send argument
+    res.render('authors/show.ejs', {
+      author: foundAuthor
+    });
+  });
+});
+
+
+
 //POST ROUTE
 router.post('/', (req, res) => {
   //logging req.body lets us see what we're posting in the terminal.
@@ -31,6 +45,8 @@ router.post('/', (req, res) => {
     res.redirect('/authors');
   });
 });
+
+
 
 
 
