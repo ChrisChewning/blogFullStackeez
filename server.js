@@ -11,6 +11,8 @@ require('./db/db')
 app.use(bodyParser.urlencoded({exteded: false}));
 app.use(methodOverride('_method'));
 
+//Assign a const variable to your controller and require your controllers.
+//Secondly use the path name /authors or /articles for your browser. 2nd arg: is to include the controller you just made. 
 const authorsController = require('./controllers/authors.js');
 app.use('/authors', authorsController);
 
